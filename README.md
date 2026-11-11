@@ -12,12 +12,12 @@ pip install . -e
 ### Storage
 Point arXimedes at a directory and it will find all of the research paper pdfs and embed them for indexing.
 ``` bash
-arXimedes scan -path
+arximedes scan -path
 ```
 
 ### Searching
 Ask a query and retrieve the papers and documents associated
 ``` bash
-arXimedes search -query
+arximedes search -query
 ```
 
