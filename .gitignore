@@ -1,0 +1,8 @@
+__pycache__
+.venv
+*.db
+file.txt
+test
+build/
+dist/
+*.egg-info/

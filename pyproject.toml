@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "arximedes"
+version = "0.1.0"
+description = "Index a folder of research-paper PDFs and search them by meaning, down to the passage and page."
+requires-python = ">=3.10"
+license = "MIT"
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Programming Language :: Python :: 3",
+]
+
+dependencies = [
+    "bm25s>=0.3",
+    "numpy>=2.0",
+    "platformdirs>=4.0",
+    "pypdf>=7.0",
+    "sentence-transformers>=6.0",
+    "sqlite-vec>=0.1.9",
+    "tqdm>=4.66",
+]
+
+[project.scripts]
+arximedes = "arximedes.cli:main"
+
+[tool.setuptools]
+package-dir = { "arximedes" = "." }
+packages = ["arximedes"]
