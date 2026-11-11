@@ -1,13 +1,14 @@
 # arXimedes
 arXimedes is a tool for research paper parsing.
 
+> v0.1
+
 ### Installation
 ``` bash
 #installing the program
 pip install . -e
 ```
 
-> v0.1
 ### Storage
 Point arXimedes at a directory and it will find all of the research paper pdfs and embed them for indexing.
 ``` bash
