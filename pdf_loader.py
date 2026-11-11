@@ -309,6 +309,22 @@ def find_title(chunks, meta_title=None, min_words=2, max_words=40, size_tol=0.3)
             return text
     return None
 
+def scan_page(path, page_num):
+    fp = pathlib.Path(path)
+    if not fp.is_file():
+        raise FileNotFoundError(f"{path} is not a PDF file")
+    reader = pypdf.PdfReader(fp)
+    
+    if page_num >= len(reader.pages):
+        raise Exception("Too few pages")
+    
+    page = reader.pages[page_num]
+    chunks = page_chunks(page)
+    lines = column_lines(chunks)
+    body = [(page_num, margin, line) for margin, line in lines]
+    sentences = split_sentences(body, key_index={})  # no citations on this path
+    return Paper(name=fp.name, title=None, sentences=sentences, citations=[])
+
 def scan_paper(path) -> Paper:
     """Parse one PDF into its bibliography citations and body sentences."""
     fp = pathlib.Path(path)

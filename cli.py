@@ -7,7 +7,7 @@ from platformdirs import user_data_dir
 from . import config
 
 DEFAULT_DB = Path(user_data_dir("arximedes")) / "papers.db"
-
+print(DEFAULT_DB)
 
 def cmd_scan(args: argparse.Namespace) -> None:
     from . import embedder
